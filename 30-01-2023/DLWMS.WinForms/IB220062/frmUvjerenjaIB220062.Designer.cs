@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvUvjerenja = new System.Windows.Forms.DataGridView();
+            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vrsta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Svrha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Uplatnica = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Printano = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Dodaj = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Printaj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnZahtjev = new System.Windows.Forms.Button();
             this.cmbVrsta = new System.Windows.Forms.ComboBox();
             this.txtSvrha = new System.Windows.Forms.TextBox();
@@ -44,13 +51,78 @@
             // 
             // dgvUvjerenja
             // 
+            this.dgvUvjerenja.AllowUserToAddRows = false;
+            this.dgvUvjerenja.AllowUserToDeleteRows = false;
             this.dgvUvjerenja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUvjerenja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Datum,
+            this.Vrsta,
+            this.Svrha,
+            this.Uplatnica,
+            this.Printano,
+            this.Dodaj,
+            this.Printaj});
             this.dgvUvjerenja.Location = new System.Drawing.Point(12, 56);
             this.dgvUvjerenja.Name = "dgvUvjerenja";
+            this.dgvUvjerenja.ReadOnly = true;
             this.dgvUvjerenja.RowTemplate.Height = 25;
+            this.dgvUvjerenja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUvjerenja.Size = new System.Drawing.Size(939, 267);
             this.dgvUvjerenja.TabIndex = 0;
             this.dgvUvjerenja.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Datum
+            // 
+            this.Datum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Datum.DataPropertyName = "VrijemeKreiranja";
+            this.Datum.HeaderText = "Datum";
+            this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
+            // 
+            // Vrsta
+            // 
+            this.Vrsta.DataPropertyName = "VrstaUvjerenja";
+            this.Vrsta.HeaderText = "Vrsta";
+            this.Vrsta.Name = "Vrsta";
+            this.Vrsta.ReadOnly = true;
+            // 
+            // Svrha
+            // 
+            this.Svrha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Svrha.DataPropertyName = "SvrhaUvjerenja";
+            this.Svrha.HeaderText = "Svrha";
+            this.Svrha.Name = "Svrha";
+            this.Svrha.ReadOnly = true;
+            // 
+            // Uplatnica
+            // 
+            this.Uplatnica.DataPropertyName = "Uplatnica";
+            this.Uplatnica.HeaderText = "Uplatnica";
+            this.Uplatnica.Name = "Uplatnica";
+            this.Uplatnica.ReadOnly = true;
+            // 
+            // Printano
+            // 
+            this.Printano.DataPropertyName = "Printano";
+            this.Printano.HeaderText = "Printano";
+            this.Printano.Name = "Printano";
+            this.Printano.ReadOnly = true;
+            // 
+            // Dodaj
+            // 
+            this.Dodaj.HeaderText = "";
+            this.Dodaj.Name = "Dodaj";
+            this.Dodaj.ReadOnly = true;
+            this.Dodaj.Text = "Briši";
+            this.Dodaj.UseColumnTextForButtonValue = true;
+            // 
+            // Printaj
+            // 
+            this.Printaj.HeaderText = "";
+            this.Printaj.Name = "Printaj";
+            this.Printaj.ReadOnly = true;
+            this.Printaj.Text = "Prinjta";
+            this.Printaj.UseColumnTextForButtonValue = true;
             // 
             // btnZahtjev
             // 
@@ -60,6 +132,7 @@
             this.btnZahtjev.TabIndex = 1;
             this.btnZahtjev.Text = "Novi zahtjev";
             this.btnZahtjev.UseVisualStyleBackColor = true;
+            this.btnZahtjev.Click += new System.EventHandler(this.btnZahtjev_Click);
             // 
             // cmbVrsta
             // 
@@ -174,5 +247,12 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private DataGridViewTextBoxColumn Datum;
+        private DataGridViewTextBoxColumn Vrsta;
+        private DataGridViewTextBoxColumn Svrha;
+        private DataGridViewImageColumn Uplatnica;
+        private DataGridViewCheckBoxColumn Printano;
+        private DataGridViewButtonColumn Dodaj;
+        private DataGridViewButtonColumn Printaj;
     }
 }
